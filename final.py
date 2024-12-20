@@ -19,10 +19,11 @@ a = {0:0,   1:70,  2:70,  3:50,  4:50,  5:70,  6:50,  7:50,  8:50,  9:35,  10:40
 b = {0:300, 1:140, 2:190, 3:180, 4:180, 5:190, 6:180, 7:180, 8:180, 9:260, 10:280, 11:300}              #end of Starting the Service times for each node
 
 #Service Times (S): 
-s = {0:0, 1:10, 2:20, 3:30, 4:20, 5:30, 6:30, 7:50 ,8:60 ,9:20 ,10:40, 11:0}                            #Service Times for each VP
+s = {0:0, 1:10, 2:20, 3:30, 4:20, 5:30, 6:30, 7:50 ,8:60 ,9:20 ,10:40, 11:0}                            #Service Times for each Customer
 
 import random
 '''
+USE THIS FOR RANDOM GENERATION
 #Let's type in time windows {a:b}
 #where "a" is the starting of starting of service time for each node
 #where "b" is the ending of starting of service time for each node
@@ -63,19 +64,19 @@ for i in range(v+1):
     veh = vehicles.append(i)
 vehicles = vehicles[1:]
 vehicles
-
-#Let's Randomize Coordinates of customers we need to deliver to!
+'''
+USE THIS FOR RANDOM GENERATION
+Let's Randomize Coordinates of customers we need to deliver to!
 seed = 1
-#X-coordinates
-# X = [random.randint(1, 200) for i in range(n) ] 
-# X = [100] + X + [100]
+X-coordinates
+X = [random.randint(1, 200) for i in range(n) ] 
+X = [100] + X + [100]
 
-#Y-Coordinates
-# Y = [random.randint(1, 200) for i in range(n) ] 
-# Y = [100] + Y + [100]
-
-# X = [55, 10, 80, 85, 65, 5 , 80 ,50, 55, 145,140, 55]                                                   #Fixed X Coordinates
-# Y = [70, 35, 5 , 105,95, 100,60 ,85, 25, 80, 115, 70]  
+Y-Coordinates
+Y = [random.randint(1, 200) for i in range(n) ] 
+Y = [100] + Y + [100]
+'''
+ 
 # we have 0 in starting and ending to depict depots (or we can add any value if we need)
 X = [100, 55, 50, 24, 141, 128, 99, 21, 69, 132, 161, 100]
 Y =  [100, 152, 59, 36, 29, 71, 79, 165, 163, 163, 77, 100]
@@ -86,7 +87,7 @@ distance_matirx = {(i, j): np.hypot(X[i] - X[j], Y[i] - Y[j]) for i in nodes for
 cost_per_dist = 0.4
 cost_matrix = {(i, j): distance_matirx[i,j]*cost_per_dist for i in nodes for j in nodes if i != j}
 #initiating a model
-model = Model("CVRPTW")
+model = Model("VRPTW")
 model.ModelSense  = GRB.MINIMIZE #redundant but looks cool
 
 arc_var = [(i, j, k) for i in nodes for j in nodes for k in vehicles if i!=j]
@@ -101,9 +102,9 @@ w = model.addVar(vtype=GRB.CONTINUOUS, name='w')
 #Multi-Objective Optimization
 
 #1st Objective - Reduce the distance being truth to time windows
-model.setObjectiveN(quicksum(distance_matirx[i,j]* x[i,j,k] for i, j, k in arc_var), 0, priority = 2)
+model.setObjectiveN(quicksum(distance_matirx[i,j]* x[i,j,k] for i, j, k in arc_var), 1, priority = 2)
 #2nd Objective - Reduce the total cost while being truth to time windows
-model.setObjectiveN(quicksum(cost_matrix[i, j]*x[i,j,k] for i, j, k in arc_var), 1, priority = 1)
+model.setObjectiveN(quicksum(cost_matrix[i, j]*x[i,j,k] for i, j, k in arc_var), 0, priority = 1)
 
 
 #adding our Constraints
@@ -156,32 +157,31 @@ N = nodes
 for k in vehicles: 
     for i in nodes: 
         if i != 0 and x[0,i,k].x>0.9:
-            aux = [0,i]
+            lol1 = [0,i]
             while i != n+1: 
                 j = i
                 for h in nodes:
                     if j != h and x[j,h,k].x>0.9:
-                        aux.append(h)
+                        lol1.append(h)
                         i = h
-            routes.append(aux)
+            routes.append(lol1)
             truck.append(k)
 
 
 #Times for the Graphical Illustration
 times = list()
 for k in range(len(routes)):
-    help = []
+    lol2 = []
     for j in range(len(routes[k])):
         l = k + 1
-        #print(k, routes[k][j], ": ", t[routes[k][j],l].x)
-        help.append(t[routes[k][j],l].x)
-    times.append(help)
+        lol2.append(t[routes[k][j],l].x)
+    times.append(lol2)
 
 
 
 #Graphic Illustration (Matplotlib)
 plt.figure(figsize=(12,5))
-plt.scatter(X,Y, color="blue")
+plt.scatter(X,Y, color="green")
 plt.scatter(X[0], Y[0], color='red', marker='D')
 plt.scatter(X[11], Y[11], color='red', marker='D') 
 
@@ -210,15 +210,10 @@ plt.annotate("\nDC|$t_{%d}$ = (%d$,%d$)" %(0, a[0], b[0]), (X[0]-1,Y[0]-5.5))
 for i in d: 
     plt.annotate('\n$t_{%d}$ = (%d$,%d$)' %(i, a[i], b[i]), (X[i]+1, Y[i]))
 
-plt.xlabel("Distance X")
-plt.ylabel("Distance Y")
+plt.xlabel("X - Coordinates")
+plt.ylabel("Y - Coordinates")
 plt.title("VRPTW ", fontsize=15)
 plt.show()
 
-#Lets focus on Heuristics now!
-''' 
-we will try the following heuristics:
-1) Greedy Search
-2)
+#Lets focus on Heuristics now! refer - final_heuristics.py
 
-'''
