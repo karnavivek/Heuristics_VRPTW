@@ -25,6 +25,8 @@ END
 1) Fixed: This is the way we used in this project, here the data have been put manually to understand how our VRPTW model works.
 2) Random: There are some sections in the "final.py" file which is commented out, those can be used to help you generate random values for the VRPTW study.
 
+We can also change the number of customers (or) the number of vehicles used for VRPTW to understand how the model works with larger instances.
+
 Now, Let's get to Mixed Interger Linear Programming Modelling of the case:
 
 ### MILP Model
@@ -84,38 +86,39 @@ Here are some results with given data:
 
 Multi-objectives: solved in 1.98 seconds (2.81 work units), solution count 1
 
+This is the Gurobi Solution:
 Objective Value:  360.27
-x[0,1,2]=1.0
-x[0,3,4]=1.0
-x[0,4,3]=1.0
-x[0,6,1]=1.0
-x[0,9,5]=1.0
-x[1,7,2]=1.0
-x[2,11,4]=1.0
-x[3,2,4]=1.0
-x[4,10,3]=1.0
-x[5,11,1]=1.0
-x[6,5,1]=1.0
-x[7,11,2]=1.0
-x[8,11,5]=1.0
-x[9,8,5]=1.0
-x[10,11,3]=1.0
-t[1,2]=70.0
-t[2,4]=164.07104870241284
-t[3,4]=99.35793878699377
-t[4,3]=81.9878039710785
-t[5,1]=110.08321791298157
-t[6,1]=50.0
-t[7,2]=116.40054944640235
-t[8,5]=153.6611633077174
-t[9,5]=70.66116330771808
-t[10,3]=153.9878039710785
-t[11,1]=180.3945066544728
-t[11,2]=268.70401957327516
-t[11,3]=259.17982802310496
-t[11,4]=248.7317013437202
-t[11,5]=283.8751220338848
-w=30.0
+- x[0,1,2]=1.0
+- x[0,3,4]=1.0
+- x[0,4,3]=1.0
+- x[0,6,1]=1.0
+- x[0,9,5]=1.0
+- x[1,7,2]=1.0
+- x[2,11,4]=1.0
+- x[3,2,4]=1.0
+- x[4,10,3]=1.0
+- x[5,11,1]=1.0
+- x[6,5,1]=1.0
+- x[7,11,2]=1.0
+- x[8,11,5]=1.0
+- x[9,8,5]=1.0
+- x[10,11,3]=1.0
+- t[1,2]=70.0
+- t[2,4]=164.07104870241284
+- t[3,4]=99.35793878699377
+- t[4,3]=81.9878039710785
+- t[5,1]=110.08321791298157
+- t[6,1]=50.0
+- t[7,2]=116.40054944640235
+- t[8,5]=153.6611633077174
+- t[9,5]=70.66116330771808
+- t[10,3]=153.9878039710785
+- t[11,1]=180.3945066544728
+- t[11,2]=268.70401957327516
+- t[11,3]=259.17982802310496
+- t[11,4]=248.7317013437202
+- t[11,5]=283.8751220338848
+- w=30.0
 ![VRPTW_MILP_figure](https://github.com/user-attachments/assets/c22722d0-859a-48ea-a108-62ff80c23da1)
 
 
@@ -142,3 +145,18 @@ Here, 0 and 11 are same Depot, it has been put that way to easily understand the
 
 
 4) By applying Genetic Algorithm
+   (will be updated soon)
+
+#### Future Course of Work:
+1) To refine this model & inject many more Objective functions to determine more stuff about VRPTW.
+2) Input More number of various Heuristic solutions
+3) Input More number of various Meta-Heuristic solutions
+4) Try to input new constraints & visualize how each model reacts.
+
+at last I would like to thank,
+1) Prof. C.Rajendran (Course Instructor)
+2) Priyam Bajpai (TA)
+
+with regards,
+Vivek Karna
+MS23S002
