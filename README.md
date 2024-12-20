@@ -9,7 +9,7 @@ Parameters:
 
 - $d_i$ - Demand at customer i
 - $C_k$ - Capacity of Vehicle
-- $[e_i,~l_i]$ - Time window for customer i ($e_i$ - earliest time,$l_i$ - latest time)
+- $[e_i,~l_i]$ - Time window for customer i ($e_i$ - earliest time, $l_i$ - latest time)
 - $s_i$ - Service time at customer i
 - $t_{ij}$ - Travel time from node i to j
 - $C_{ij}$ - Travel cost from node i to j(Proportional to distance)
@@ -22,7 +22,7 @@ Decision Variables:
 
 Objective Function:
 
-$Minimize~Total~Travel~Cost$ = 
+Minimize Total Travel Cost = 
 - $min \Sigma^k_{k=1}\Sigma^i_{i=0}\Sigma^j_{j=1}~C_{ij}X^k_{ij}~~~\forall j\neq i$
 
 Constraints:
