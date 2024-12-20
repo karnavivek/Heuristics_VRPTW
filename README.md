@@ -16,7 +16,7 @@ Parameters:
 
 Decision Variables:
 
-- $x^k_{ij}  \in  \{0,1\};~[1 - Vehicle~k~travels~from~i~to~j~|~0 - otherwise]$
+- $x^k_{ij}\in\{0,1\}$ ; [1 - Vehicle k travels from i to j | 0 - otherwise]
 - $u^k_i  \geq  0;~Load~of~vehicle~k~after~visiting~node~i$
 - $k^k_i  \geq  0;~Arrival~time~of~vehicle~k~after~visiting~node~i$
 
