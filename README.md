@@ -80,7 +80,24 @@ Here are some results with given data:
 
 
 2) By applying Nearest Neighbour Heuristic
+
+I have used “Nearest Neighbor” Approach in Heuristics for the problem to get feasible solution, which is not optimal of course.
+Solution we get in this approach is following:
+Vehicle 1 route: [0, 10, 5, 11]
+Distance: 73.85
+Vehicle 2 route: [0, 8, 7, 11]
+Distance: 150.35
+Vehicle 3 route: [0, 9, 11]
+Distance: 70.66
+Vehicle 4 route: [0, 4, 6, 11]
+Distance: 86.32
+Vehicle 5 route: [0, 3, 2, 11]
+Distance: 99.37
+Total Distance: 480.56
+
+Here, 0 and 11 are same Depot, it has been put that way to easily understand the code .
+
 ![image](https://github.com/user-attachments/assets/a3a7773a-7e98-4b94-b1c7-403d02eba197)
 
 
-3) By applying Genetic Algorithm
+4) By applying Genetic Algorithm
