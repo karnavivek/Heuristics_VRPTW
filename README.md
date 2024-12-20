@@ -49,3 +49,15 @@ Constraints:
 
 - $t^k_j\geq t^k_i + s_i + t_{ij} - M(1-x^k_{ij})$
 - $e_i \leq t^k_i \leq l_i$ - Time window bounds
+
+
+Here are some results with given data:
+1) Traditional MILP using Gurobi
+![image](https://github.com/user-attachments/assets/226dc2e4-778c-4583-9baa-6f6cff77317a)
+
+
+2) By applying Nearest Neighbour Heuristic
+![image](https://github.com/user-attachments/assets/a3a7773a-7e98-4b94-b1c7-403d02eba197)
+
+
+3) By applying Genetic Algorithm
