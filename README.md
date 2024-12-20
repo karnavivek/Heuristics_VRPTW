@@ -4,8 +4,6 @@
 
 Steps Involved in this Project:
 
-Try making a flowchart if possible within time
-
 START
 - Define Parameters
 - Initiating a model
@@ -19,7 +17,10 @@ START
 - Solving the Model using simple construction Heuristics
 - Solving the above model using Meta-Heuristics like Genetic algorithm
 - Comparing all the results together & generate observations in the form of report considering larger instances of the problem
+
 END
+
+Now, Let's get to Mixed Interger Linear Programming Modelling of the case:
 
 ### MILP Model
 
@@ -71,6 +72,7 @@ Constraints:
 - $t^k_j\geq t^k_i + s_i + t_{ij} - M(1-x^k_{ij})$
 - $e_i \leq t^k_i \leq l_i$ - Time window bounds
 
+### Results:
 
 Here are some results with given data:
 1) Traditional MILP using Gurobi
