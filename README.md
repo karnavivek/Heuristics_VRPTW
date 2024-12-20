@@ -1,4 +1,25 @@
-# Heuristics_VRPTW
+# MS5570_Heuristics_VRPTW
+
+### Steps Involved in this Project
+
+Steps Involved in this Project:
+
+Try making a flowchart if possible within time
+
+START
+- Define Parameters
+- Initiating a model
+- Adding our Decision Variables
+- Adding our Objection Function
+- Optimizing our model through Gurobi
+- Printing results
+- Making a visualization
+- Noting computational speed at larger instances
+- Making Construction Heuristics 	
+- Solving the Model using simple construction Heuristics
+- Solving the above model using Meta-Heuristics like Genetic algorithm
+- Comparing all the results together & generate observations in the form of report considering larger instances of the problem
+END
 
 ### MILP Model
 
