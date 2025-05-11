@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-from color import Color
+# from color import Color
 
 
 #parameters of the problem
@@ -56,7 +56,7 @@ service_time = [random.randint(0, 20)*5 for _ in range(n)]
 service_time = [0] + service_time + [0]
 
 s = dict(zip(list_cust, service_time))
-'''
+''' 
 
 #List of vehicles/number of vehicles
 vehicles = []
@@ -84,6 +84,7 @@ Y =  [100, 152, 59, 36, 29, 71, 79, 165, 163, 163, 77, 100]
 
 #Travelling time - , 
 distance_matirx = {(i, j): np.hypot(X[i] - X[j], Y[i] - Y[j]) for i in nodes for j in nodes if i != j}
+
 cost_per_dist = 0.4
 cost_matrix = {(i, j): distance_matirx[i,j]*cost_per_dist for i in nodes for j in nodes if i != j}
 #initiating a model
@@ -190,7 +191,7 @@ for r in range(len(routes)):
     for n in range(len(routes[r]) - 1):
         i = routes[r][n]
         j = routes[r][n+1]
-        plt.plot([X[i], X[j]],[Y[i], Y[j]], color=Color[r], alpha = 0.3)
+        plt.plot([X[i], X[j]],[Y[i], Y[j]], alpha = 0.3)
 
 #Time when the Vehicle starts the Serivce at each Visit-Point
 for r in range(len(times)):
@@ -202,7 +203,7 @@ for r in range(len(times)):
             plt.annotate('$t_{%d}=%d$\n'%(i,times[r][n]),(X[i]+1,Y[i]))
 
 #Legend
-patch = [mpatches.Patch(color=Color[n], label="Vehicle " + str(truck[n])) for n in range(len(truck))]
+patch = [mpatches.Patch(label="Vehicle " + str(truck[n])) for n in range(len(truck))]
 plt.legend(handles=patch,loc='best')
 
 #Time Windows for each Visit-Point
