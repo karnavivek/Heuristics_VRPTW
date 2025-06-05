@@ -1,4 +1,28 @@
-# MS5570_Heuristics_VRPTW
+# IDLEE - Case Study on Optimizing Vehicle Routing Problem with Time Windows
+
+## What is Idlee & Co? 
+
+Welcome to Idlee & Co, the South Indian breakfast franchise redefining your mornings, one plate at a time. At Idlee, our menu celebrates the rich variety of South Indian breakfast classics, but there’s one star that keeps our customers coming back—our legendary idli.
+
+What sets Idlee apart? According to our customers, it’s the unbeatable freshness, soft texture, and mouthwatering taste of our idlis that make us the go-to destination for early morning breakfasts. The secret behind our irresistibly fresh idlis lies in our unique supply chain: every Idlee franchise receives freshly prepared batter each morning, ensuring that every idli served is as fresh as it gets and to maintain consistancy among all the franchises.
+
+So, whether you’re a breakfast enthusiast or simply seeking the perfect start to your day, Idlee & Co promises a truly authentic and fresh South Indian breakfast experience—where “fresh” isn’t just a word, it’s our way of life.
+
+
+
+### Scope of this Case Study:
+
+Every food business sacrifices their food quality over reducing cost, which interm will increase their profit. 
+What happens when a restaurant chain comes in & preaces for good and consistent food quality? where reducing cost may not be their first priority!?
+This is where our case study comes in, This supply chain is designed for specific need presented by the stakeholders of the company.
+
+What are the demands of the stakeholders? (This can be treated as direct (or) indirect constraints for our study)
+1) Every Franchise should have same (consistent) idle batter
+   - They tackle this by making the idli batter at one place & then distribute it to the franchises.
+   - This is a verticle integretion for them as they sell idli batters in a manufactured packs in supermarkets as well. (Stakeholders wish to make use of their less utilized idly batter manufacturing plants)
+
+2) Having all these constraint, keep the costs at minimum.
+   (They 2nd Priority is to Reduce cost & make the whole supply chains's cost to the minimum)
 
 ### Steps Involved in this Project
 
@@ -88,42 +112,12 @@ Multi-objectives: solved in 1.98 seconds (2.81 work units), solution count 1
 
 This is the Gurobi Solution:
 Objective Value:  360.27
-- x[0,1,2]=1.0
-- x[0,3,4]=1.0
-- x[0,4,3]=1.0
-- x[0,6,1]=1.0
-- x[0,9,5]=1.0
-- x[1,7,2]=1.0
-- x[2,11,4]=1.0
-- x[3,2,4]=1.0
-- x[4,10,3]=1.0
-- x[5,11,1]=1.0
-- x[6,5,1]=1.0
-- x[7,11,2]=1.0
-- x[8,11,5]=1.0
-- x[9,8,5]=1.0
-- x[10,11,3]=1.0
-- t[1,2]=70.0
-- t[2,4]=164.07104870241284
-- t[3,4]=99.35793878699377
-- t[4,3]=81.9878039710785
-- t[5,1]=110.08321791298157
-- t[6,1]=50.0
-- t[7,2]=116.40054944640235
-- t[8,5]=153.6611633077174
-- t[9,5]=70.66116330771808
-- t[10,3]=153.9878039710785
-- t[11,1]=180.3945066544728
-- t[11,2]=268.70401957327516
-- t[11,3]=259.17982802310496
-- t[11,4]=248.7317013437202
-- t[11,5]=283.8751220338848
-- w=30.0
+
 ![VRPTW_MILP_figure](https://github.com/user-attachments/assets/c22722d0-859a-48ea-a108-62ff80c23da1)
 
 
 
-3) By applying Nearest Neighbour Heuristic
+2) By applying Nearest Neighbour Heuristic
 
 I have used “Nearest Neighbor” Approach in Heuristics for the problem to get feasible solution, which is not optimal of course.
 Solution we get in this approach is following:
@@ -144,7 +138,7 @@ Here, 0 and 11 are same Depot, it has been put that way to easily understand the
 ![image](https://github.com/user-attachments/assets/a3a7773a-7e98-4b94-b1c7-403d02eba197)
 
 
-4) By applying Genetic Algorithm
+3) By applying Genetic Algorithm
    (will be updated soon)
 
 #### Future Course of Work:
@@ -153,10 +147,13 @@ Here, 0 and 11 are same Depot, it has been put that way to easily understand the
 3) Input More number of various Meta-Heuristic solutions
 4) Try to input new constraints & visualize how each model reacts.
 
+
+This Case Study was created & thought in accordance of:
+##### MS5570_Heuristics_VRPTW
+
 at last I would like to thank,
 1) Prof. C.Rajendran (Course Instructor)
-2) Priyam Bajpai (TA)
 
 with regards,
 Vivek Karna
-MS23S002
+
