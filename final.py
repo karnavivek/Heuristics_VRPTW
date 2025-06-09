@@ -64,18 +64,20 @@ for i in range(v+1):
     veh = vehicles.append(i)
 vehicles = vehicles[1:]
 vehicles
-'''
-USE THIS FOR RANDOM GENERATION
-Let's Randomize Coordinates of customers we need to deliver to!
-seed = 1
-X-coordinates
-X = [random.randint(1, 200) for i in range(n) ] 
-X = [100] + X + [100]
 
-Y-Coordinates
-Y = [random.randint(1, 200) for i in range(n) ] 
-Y = [100] + Y + [100]
-'''
+#USE THIS FOR RANDOM GENERATION
+#Let's Randomize Coordinates of customers we need to deliver to!
+seed = 1
+#X-coordinates
+
+# X = [random.randint(1, 200) for i in range(n) ] 
+# X = [100] + X + [100]
+
+#Y-Coordinates
+
+# Y = [random.randint(1, 200) for i in range(n) ] 
+# Y = [100] + Y + [100]
+
  
 # we have 0 in starting and ending to depict depots (or we can add any value if we need)
 X = [100, 55, 50, 24, 141, 128, 99, 21, 69, 132, 161, 100]
@@ -182,7 +184,7 @@ for k in range(len(routes)):
 
 #Graphic Illustration (Matplotlib)
 plt.figure(figsize=(12,5))
-plt.scatter(X,Y, color="green")
+plt.scatter(X, Y, color="green")
 plt.scatter(X[0], Y[0], color='red', marker='D')
 plt.scatter(X[11], Y[11], color='red', marker='D') 
 

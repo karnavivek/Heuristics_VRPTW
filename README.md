@@ -9,7 +9,6 @@ What sets Idlee apart? According to our customers, it’s the unbeatable freshne
 So, whether you’re a breakfast enthusiast or simply seeking the perfect start to your day, Idlee & Co promises a truly authentic and fresh South Indian breakfast experience—where “fresh” isn’t just a word, it’s our way of life.
 
 
-
 ### Scope of this Case Study:
 
 Every food business sacrifices their food quality over reducing cost, which interm will increase their profit. 

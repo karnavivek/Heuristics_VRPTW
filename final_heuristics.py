@@ -74,18 +74,18 @@ plt.figure(figsize=(12, 5))
 # Plot the nodes
 for i in nodes:
     if i == 0 or i == n+1:  # Depots
-        plt.scatter(X[i], Y[i], c='red', s=200, label='Depot' if i == 0 else None, edgecolors='black')
-        plt.text(X[i], Y[i], f"D", fontsize=10, ha='center', va='center', color='white')
+        plt.scatter(X[i], Y[i], c='r', marker='D', label='Depot' if i == 0 else None)
+        # plt.text(X[i], Y[i], f"D", fontsize=10, ha='center', va='center', color='white')
     else:  # Customers
-        plt.scatter(X[i], Y[i], c='blue', s=100, edgecolors='black')
-        plt.text(X[i], Y[i], f"{i}", fontsize=8, ha='center', va='center')
+        plt.scatter(X[i], Y[i], c='g')
+        # plt.text(X[i], Y[i], f"{i}", fontsize=8, ha='center', va='center')
 
 # Plot the routes
 for vehicle, route in routes.items():
     route_color = colors(vehicle / v)  # Assign a color to each vehicle
     for i in range(len(route) - 1):
         start, end = route[i], route[i + 1]
-        plt.plot([X[start], X[end]], [Y[start], Y[end]], c=route_color, linewidth=2, label=f'Vehicle {vehicle + 1}' if i == 0 else "")
+        plt.plot([X[start], X[end]], [Y[start], Y[end]], c=route_color, linewidth=2, label=f'Vehicle {vehicle + 1}' if i == 0 else "", alpha=0.3)
 
 # Add legend
 handles = [
@@ -97,7 +97,7 @@ plt.legend(handles=handles, loc='upper left', fontsize=8)
 plt.title("VRPTW - Routes Visualization")
 plt.xlabel("X Coordinates")
 plt.ylabel("Y Coordinates")
-plt.grid(True)
+# plt.grid(True)
 
 # Show the plot
 plt.show()
