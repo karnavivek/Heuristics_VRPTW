@@ -102,6 +102,11 @@ Constraints:
 - $t^k_j\geq t^k_i + s_i + t_{ij} - M(1-x^k_{ij})$
 - $e_i \leq t^k_i \leq l_i$ - Time window bounds
 
+\n
+TSP is a NP-Hard problem, If the number of Variable increases, it will become infeasible to run this model. For this case, if the number of franchises increase by large, this code will become useless!\n
+
+Now, for that not to happen, our only hope is to get a solution which is near optimal, hence we will take help of heuristics & meta heuristics. For heuristics, for now, I have designed it via Nearest Neighbor. For Meta-Heuristics, we are using Genetic algorithm.
+
 ### Results:
 
 Here are some results with given data:
